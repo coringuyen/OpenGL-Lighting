@@ -100,7 +100,7 @@ bool LightingSphereApplication::update(float deltaTime) {
 
 	// rotate light direction
 	float time = (float)glfwGetTime();
-	m_directionalLight.direction = vec3(sinf(time), 0, cosf(time));
+	m_directionalLight.direction = vec3(sinf(0), 0, cosf(0));
 
 	// clear the gizmos and add a transform and grid
 	Gizmos::clear();
@@ -209,7 +209,6 @@ void LightingSphereApplication::generateSphere(unsigned int segments, unsigned i
 	float segmentAngle = 2.0f * glm::pi<float>() / segments;
 
 	AIEVertex* vertex = vertices;
-
 	for (unsigned int ring = 0; ring < (rings + 2); ++ring) {
 		float r0 = glm::sin(ring * ringAngle);
 		float y0 = glm::cos(ring * ringAngle);

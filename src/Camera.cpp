@@ -34,12 +34,12 @@ void Camera::update(float deltaTime) {
 
 	GLFWwindow* window = glfwGetCurrentContext();
 
-	float frameSpeed = glfwGetKey(window,GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS ? deltaTime * m_speed * 2 : deltaTime * m_speed;	
+	float frameSpeed = glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS ? deltaTime * m_speed * 2 : deltaTime * m_speed;
 
 	// translate
-	if (glfwGetKey(window,'W') == GLFW_PRESS)
+	if (glfwGetKey(window, 'W') == GLFW_PRESS)
 		m_transform[3] -= m_transform[2] * frameSpeed;
-	if (glfwGetKey(window,'S') == GLFW_PRESS)
+	if (glfwGetKey(window, 'S') == GLFW_PRESS)
 		m_transform[3] += m_transform[2] * frameSpeed;
 	if (glfwGetKey(window,'D') == GLFW_PRESS)
 		m_transform[3] += m_transform[0] * frameSpeed;
